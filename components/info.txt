@@ -1,0 +1,27 @@
+Info is in components\retro-go/targets/ice-queen.
+Named after a song by my favorite band on a very hot day.
+
+To build in Windows (with ESP-IDF installed):
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
+
+$env:PATH = "C:\Espressif\tools\python;" + $env:PATH
+$env:IDF_PATH = "C:\Espressif\frameworks\esp-idf-v5.3.5"
+. C:\Espressif\frameworks\esp-idf-v5.3.5\export.ps1
+python rg_tool.py clean
+python rg_tool.py --target=esp32-s3-devkit build-fw
+python rg_tool.py --target=ice-queen build-fw
+
+Hardware connections is in config.h.
+
+Select apps to build in env.py.
+Default Core Apps & EmulatorsWhen you boot up a standard Retro-Go build, you get a set of default "core" emulators and applications:
+Nofrendo-go (Nintendo Entertainment System)
+Gnuboy-go (Game Boy & Game Boy Color)
+SmsPlus-go (Sega Master System & Game Gear)
+ColEm-go (ColecoVision)
+Pce-go (PC Engine / TurboGrafx-16)
+Doom-go (A ported version of the classic DOOM game, including mods)
+Prboom-go (Doom engine port)
+gwenesis: The Sega Genesis / Mega Drive emulator core.
+retro-core: The backend framework/library
+launcher: The core graphical interface
