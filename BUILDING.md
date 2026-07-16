@@ -36,6 +36,8 @@ For brevity, all the commands listed in this document omit additional flags that
 Run `python rg_tool.py --help` to see all available flags and commands.
 
 
+
+
 ## Build everything and generate a firmware image:
 - Generate a .fw file to be installed with odroid-go-firmware or odroid-go-multi-firmware from SD Card:\
     `python rg_tool.py build-fw` or `python rg_tool.py release` (clean build)

@@ -25,3 +25,10 @@ Prboom-go (Doom engine port)
 gwenesis: The Sega Genesis / Mega Drive emulator core.
 retro-core: The backend framework/library
 launcher: The core graphical interface
+
+
+Build in Linux:
+export IDF_PYTHON_ENV_PATH='/mnt/nvm/esp-idf/tools/python_env/idf5.4_py3.13_env'
+source /mnt/nvm/esp-idf/export.sh
+python rg_tool.py build-fw launcher prboom-go
+
