@@ -30,5 +30,8 @@ launcher: The core graphical interface
 Build in Linux:
 export IDF_PYTHON_ENV_PATH='/mnt/nvm/esp-idf/tools/python_env/idf5.4_py3.13_env'
 source /mnt/nvm/esp-idf/export.sh
-python rg_tool.py build-fw launcher prboom-go
+python rg_tool.py --target=ice-queen clean
+python rg_tool.py --target=ice-queen build-fw launcher prboom-go
+
+If you switch targets, rebuild from a clean state first (for example, run `idf.py fullclean` inside the affected app build directories).
 
