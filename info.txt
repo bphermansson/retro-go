@@ -35,3 +35,11 @@ python rg_tool.py --target=ice-queen build-fw launcher prboom-go
 
 If you switch targets, rebuild from a clean state first (for example, run `idf.py fullclean` inside the affected app build directories).
 
+Btns:
+Pin, input
+42, d6
+41, d7
+40, d5
+39, d4
+38, d3
+37  d2

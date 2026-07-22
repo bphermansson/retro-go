@@ -50,19 +50,23 @@
     ILI9341_CMD(0xE1, 0xD0, 0x00, 0x05, 0x0D, 0x0C, 0x06, 0x2D, 0x44, 0x40, 0x0E, 0x1C, 0x18, 0x16, 0x19);
 
 
-// Input
-// Refer to rg_input.h to see all available RG_KEY_* and RG_GAMEPAD_*_MAP types
+#define RG_GAMEPAD_ADC_MAP {\
+    {RG_KEY_UP,    ADC_UNIT_2, ADC_CHANNEL_0, ADC_ATTEN_DB_11, 3072, 4096},\
+    {RG_KEY_DOWN,  ADC_UNIT_2, ADC_CHANNEL_0, ADC_ATTEN_DB_11, 0, 1024},\
+    {RG_KEY_LEFT,  ADC_UNIT_2, ADC_CHANNEL_1, ADC_ATTEN_DB_11, 3072, 4096},\
+    {RG_KEY_RIGHT, ADC_UNIT_2, ADC_CHANNEL_1, ADC_ATTEN_DB_11, 0, 1024},\
+}
 #define RG_GAMEPAD_GPIO_MAP {\
-    {RG_KEY_UP,     .num = GPIO_NUM_3,  .pullup = 1, .level = 0},\
-    {RG_KEY_RIGHT,  .num = GPIO_NUM_9,  .pullup = 1, .level = 0},\
-    {RG_KEY_DOWN,   .num = GPIO_NUM_10, .pullup = 1, .level = 0},\
-    {RG_KEY_LEFT,   .num = GPIO_NUM_11, .pullup = 1, .level = 0},\
-    {RG_KEY_SELECT, .num = GPIO_NUM_12, .pullup = 1, .level = 0},\
+    {RG_KEY_UP,     .num = GPIO_NUM_NC, .pullup = 1, .level = 0},\
+    {RG_KEY_RIGHT,  .num = GPIO_NUM_NC, .pullup = 1, .level = 0},\
+    {RG_KEY_DOWN,   .num = GPIO_NUM_NC, .pullup = 1, .level = 0},\
+    {RG_KEY_LEFT,   .num = GPIO_NUM_NC, .pullup = 1, .level = 0},\
+    {RG_KEY_SELECT, .num = GPIO_NUM_NC, .pullup = 1, .level = 0},\
     {RG_KEY_START,  .num = GPIO_NUM_13, .pullup = 1, .level = 0},\
     {RG_KEY_MENU,   .num = GPIO_NUM_NC, .pullup = 1, .level = 0},\
-    {RG_KEY_OPTION, .num = GPIO_NUM_NC,  .pullup = 1, .level = 0},\
+    {RG_KEY_OPTION, .num = GPIO_NUM_NC, .pullup = 1, .level = 0},\
     {RG_KEY_A,      .num = GPIO_NUM_NC, .pullup = 1, .level = 0},\
-    {RG_KEY_B,      .num = GPIO_NUM_NC,  .pullup = 1, .level = 0},\
+    {RG_KEY_B,      .num = GPIO_NUM_NC, .pullup = 1, .level = 0},\
 }
 
 // Battery
@@ -85,10 +89,10 @@
 #define RG_GPIO_LCD_RST             GPIO_NUM_6
 
 // SPI SD Card
-#define RG_GPIO_SDSPI_MISO          GPIO_NUM_18
-#define RG_GPIO_SDSPI_MOSI          GPIO_NUM_17
-#define RG_GPIO_SDSPI_CLK           GPIO_NUM_8
-#define RG_GPIO_SDSPI_CS            GPIO_NUM_16
+#define RG_GPIO_SDSPI_MISO          GPIO_NUM_10
+#define RG_GPIO_SDSPI_MOSI          GPIO_NUM_3
+#define RG_GPIO_SDSPI_CLK           GPIO_NUM_46
+#define RG_GPIO_SDSPI_CS            GPIO_NUM_8
 
 // External I2S DAC
 #define RG_GPIO_SND_I2S_BCK         41
